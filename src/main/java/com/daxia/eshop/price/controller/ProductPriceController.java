@@ -65,4 +65,14 @@ public class ProductPriceController {
         }
         return new ProductPrice();
     }
+
+    @RequestMapping("/findByProductId")
+    public ProductPrice findByProductId(Long productId){
+        try {
+            return productPriceService.findByProductId(productId);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return new ProductPrice();
+    }
 }
